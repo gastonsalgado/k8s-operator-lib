@@ -1,1 +1,1 @@
-# k8s-operator-lib
+# Kubernetes Operator Library
