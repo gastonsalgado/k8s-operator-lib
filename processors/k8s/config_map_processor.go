@@ -1,4 +1,4 @@
-package k8sprocessor
+package k8sprocessors
 
 import (
 	"context"
@@ -14,7 +14,7 @@ import (
 
 type ConfigMapsProcessor struct {
 	Object       *corev1.ConfigMap
-	Action       K8sAction
+	Action       Action
 	Dependencies []processors.Processor
 }
 

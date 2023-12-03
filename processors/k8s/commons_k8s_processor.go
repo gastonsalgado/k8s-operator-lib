@@ -1,4 +1,4 @@
-package k8sprocessor
+package k8sprocessors
 
 import (
 	"context"
@@ -7,12 +7,12 @@ import (
 	"github.com/go-logr/logr"
 )
 
-type K8sAction string
+type Action string
 
 const (
-	CreateOrUpdate K8sAction = "CreateOrUpdate"
-	Delete         K8sAction = "Delete"
-	Ignore         K8sAction = "Ignore"
+	CreateOrUpdate Action = "CreateOrUpdate"
+	Delete         Action = "Delete"
+	Ignore         Action = "Ignore"
 )
 
 func processObject(r processors.Reconcile, log logr.Logger, ctx context.Context, application processors.Application, processor processors.Processor) (bool, error) {
