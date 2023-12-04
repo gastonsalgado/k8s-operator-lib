@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/gastonsalgado/k8s-operator-lib/applications"
 	"github.com/gastonsalgado/k8s-operator-lib/processors"
 	"github.com/go-logr/logr"
 	"github.com/google/go-cmp/cmp"
@@ -44,10 +45,10 @@ func (configMapsProcessor *ConfigMapsProcessor) updateObject(object client.Objec
 	object.(*corev1.ConfigMap).Data = configMapsProcessor.Object.Data
 }
 
-func (configMapsProcessor *ConfigMapsProcessor) IsReady(r processors.Reconcile, log logr.Logger, ctx context.Context, application processors.Application) (bool, error) {
+func (configMapsProcessor *ConfigMapsProcessor) IsReady(r processors.Reconcile, log logr.Logger, ctx context.Context, application applications.Application) (bool, error) {
 	return true, nil
 }
 
-func (configMapsProcessor *ConfigMapsProcessor) Process(r processors.Reconcile, log logr.Logger, ctx context.Context, application processors.Application) (bool, error) {
+func (configMapsProcessor *ConfigMapsProcessor) Process(r processors.Reconcile, log logr.Logger, ctx context.Context, application applications.Application) (bool, error) {
 	return processObject(r, log, ctx, application, configMapsProcessor)
 }
