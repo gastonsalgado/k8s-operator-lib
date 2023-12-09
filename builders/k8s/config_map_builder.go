@@ -56,8 +56,8 @@ func (configMapBuilder *ConfigMapBuilder) setDependencies(dependencies []process
 	configMapBuilder.dependencies = dependencies
 }
 
-func (configMapBuilder *ConfigMapBuilder) getConfigMap() *k8sprocessors.ConfigMapsProcessor {
-	return &k8sprocessors.ConfigMapsProcessor{
+func (configMapBuilder *ConfigMapBuilder) getConfigMap() *k8sprocessors.ConfigMapProcessor {
+	return &k8sprocessors.ConfigMapProcessor{
 		Object:       configMapBuilder.object,
 		Action:       configMapBuilder.action,
 		Dependencies: configMapBuilder.dependencies,
