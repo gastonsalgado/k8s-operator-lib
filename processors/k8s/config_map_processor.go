@@ -40,7 +40,6 @@ func (configMapProcessor *ConfigMapProcessor) compareDiff(compareObject interfac
 
 func (configMapProcessor *ConfigMapProcessor) updateObject(object client.Object) {
 	object.(*corev1.ConfigMap).TypeMeta.APIVersion = configMapProcessor.Object.TypeMeta.APIVersion
-	object.(*corev1.ConfigMap).TypeMeta.Kind = configMapProcessor.Object.TypeMeta.Kind
 	object.(*corev1.ConfigMap).Annotations = configMapProcessor.Object.Annotations
 	object.(*corev1.ConfigMap).Data = configMapProcessor.Object.Data
 }

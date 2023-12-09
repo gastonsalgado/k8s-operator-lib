@@ -1,3 +1,7 @@
 {
-    "gopls": { "ui.semanticTokens": true }
+  "gopls": { "ui.semanticTokens": true },
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ]
 }
